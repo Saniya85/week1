@@ -1,0 +1,36 @@
+function computerMove(){
+    const randomNumber = Math.random();
+    
+    if (randomNumber < 1 / 3) {
+        return 'rock';
+    } 
+    else if (randomNumber < 2 / 3) {
+        return 'paper';
+    }
+    else {
+        return 'scissors';
+    }
+}
+
+function Winner(playerMove, computerMove) {
+    if (playerMove === computerMove) {
+        return 'Tie,as you and computer picked same.';
+    } 
+    else if (
+        (playerMove === 'rock' && computerMove === 'scissors') ||
+        (playerMove === 'paper' && computerMove === 'rock') ||
+        (playerMove === 'scissors' && computerMove === 'paper')
+    ) {
+        return 'You win';
+    } 
+    else {
+        return 'You lose!';
+    }
+}
+
+function playGame(playerMove) {
+    const computermove = computerMove();
+    const result = Winner(playerMove, computerMove);
+    console.log(`You picked ${playerMove}. Computer picked ${computermove}. ${result}`);
+}
+playGame('rock');
