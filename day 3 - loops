@@ -1,0 +1,17 @@
+for(let i=0;i<=8;i++){
+    function color(i){
+    if(i===0 && i===8){
+        return "blue";
+    }
+    else if(i===8 && i===10){
+        return "pink";
+    }
+    else if(i===11 && i===20){
+        return "yellow";
+    }
+    else {
+        return "white";
+    }
+}
+console.log (color(8));
+}
