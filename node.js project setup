@@ -1,0 +1,21 @@
+//open terminal and enter the node -v and npm -v
+// to crtaete a folder keep mkdir foldername
+//cd to that folder name
+//initialize with   npm init -y  (craetes a package.json file)
+//npm install express
+//type the code below
+
+const express=require("express"); 
+const app=express();
+
+//define the GET route
+app.get("/",(req,res)=>{
+  res.send("hello");
+});
+
+//start the server
+app.listen(3000,()=>{
+  console.log("server is running on http://localhost:3000");
+});
+
+// run this in terminal as node filename or npm start(it will display the output)
