@@ -1,0 +1,34 @@
+const person = {
+    name: "Saniya",
+    age: 20,
+    profession: "Student",
+    hobbies: ["painting", "traveling", "cooking"],
+
+ 
+    introduce() {
+        console.log(`Hi, my name is ${this.name}. I am ${this.age} years old and I am a ${this.profession}.`);
+    },
+
+    addHobby(newHobby) {
+        this.hobbies.push(newHobby);
+        console.log(`${newHobby} added to hobbies.`);
+    },
+
+    listHobbies() {
+        console.log(`My hobbies are: ${this.hobbies.join(", ")}`);
+    },
+
+ 
+    changeProfession(newProfession) {
+        this.profession = newProfession;
+        console.log(`My new profession is: ${this.profession}`);
+    }
+};
+
+
+person.introduce();          
+person.listHobbies();        
+person.addHobby("reading");  
+person.listHobbies();        
+person.changeProfession("Software Engineer"); 
+person.introduce();          
