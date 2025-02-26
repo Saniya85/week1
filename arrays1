@@ -1,0 +1,40 @@
+let arr = [10, 20, 30, 40, 50];
+
+console.log(arr[0]); 
+console.log(arr[arr.length - 1]); 
+
+arr.push(60);   
+console.log(arr); 
+
+arr.pop();    
+console.log(arr); 
+
+arr.unshift(5); 
+console.log(arr); 
+
+arr.shift();    
+console.log(arr); 
+
+let numbers = [1, 2, 3, 4, 5];
+let squared = numbers.map(num => num * num);
+console.log(squared); 
+
+let  greater3= numbers.filter(number => number >= 3)
+console.log(greater3);
+
+let sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+console.log(sum);
+console.log(greater3);
+
+
+let num = numbers.find(s => s > 3);
+console.log(num);
+
+numbers.sort((a,b)=>a-b);  //ascending
+console.log(numbers);
+
+numbers.sort((a,b)=>b-a); //descending
+console.log(numbers);
+
+numbers.splice(2, 1, 99); 
+console.log(numbers);
