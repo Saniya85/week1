@@ -1,0 +1,28 @@
+const person = {
+    name: "saniya",
+    age: 20,
+    profession: "Student",
+    hobbies: ["painting", "traveling", "cooking"]
+};
+
+//adding
+console.log(person);  
+person.nationality = "Indian";  
+console.log(person);  
+
+//updating
+person.age = 21; 
+person.profession = "Software Engineer";  
+console.log(person);  
+
+//deleting
+delete person.nationality;  
+console.log(person);  
+
+
+let obj={
+    name:"saniya",
+    age:20,
+    location:"hyderabad"
+}
+console.log(obj);
