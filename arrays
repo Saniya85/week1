@@ -1,0 +1,50 @@
+var a=[];
+console.log(a);
+
+var a=[10,20,30,40];
+console.log(a);
+
+var a = new Array(10,20,30);
+console.log(a);
+
+let e=50;
+a.unshift(e);
+console.log(a);
+
+let d=50;
+a.push(e);
+console.log(a);
+
+let f=50;
+let pos=2;
+a.splice(pos,0,f);
+console.log(a);
+
+var res=a.shift();
+console.log(a);
+
+
+var res = a.pop(2);
+console.log(a);
+
+let index=2;
+var res=a.splice(index,1);
+console.log(a);
+
+b=[];
+console.log(b);
+
+b=["saniya",2,3];
+console.log(b);
+
+var c=6;
+b.unshift(c);
+console.log(b);
+
+let numbersList = [10, 5, 8, 2, 20];
+
+numbersList.sort((a, b) => a  - b);
+console.log(numbersList); 
+
+numbersList.sort((a, b) => b - a); 
+console.log(numbersList); 
