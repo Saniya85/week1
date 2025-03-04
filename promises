@@ -1,0 +1,51 @@
+//Creating and using a promise
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Data received");
+//         }, 2000);
+//     });
+// }
+// fetchData().then(data => {
+//     console.log(data); // Output after 2 seconds: Data received
+// });
+
+
+//handling error with .catch()
+
+
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let success = false; // Simulating failure
+//             if (success) {
+//                 resolve("Data received");
+//             } else {
+//                 reject("Error: Data fetch failed");
+//             }
+//         }, 2000);
+//     });
+// }
+
+// fetchData()
+//     .then(data => console.log(data))
+//     .catch(error => console.log(error)); // Output: Error: Data fetch failed
+
+
+
+//example using async/await
+function fetchData() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 2000);
+    });
+}
+
+async function getData() {
+    console.log("Fetching data...");
+    const data = await fetchData();
+    console.log(data); // Output after 2 seconds: Data received
+}
+
+getData();
