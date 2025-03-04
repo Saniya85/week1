@@ -1,0 +1,26 @@
+function orderFood(foodName, callback) {
+    console.log(`Ordering ${foodName}...`);
+    
+    // delay (like cooking food)
+    setTimeout(() => {
+        console.log(`${foodName} is ready!`);
+        callback(foodName);  // Calling the callback when food is ready
+    }, 3000);
+}
+
+// Using the callback
+orderFood("Pizza", function(food) {
+    console.log(`Eating the delicious ${food} `);
+});
+
+orderFood("Burger", function(burger){
+    console.log(` Eating the burger`)
+});
+
+orderFood("fries",function(fries){
+    console.log(`eating freis `);
+
+});
+orderFood("Shake", function(shake) {
+    console.log(`Drinking ${shake} `)
+});
