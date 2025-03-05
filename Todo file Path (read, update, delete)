@@ -1,0 +1,56 @@
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname, 'todo.txt');
+
+function addTask(task) {
+    fs.appendFile(filePath, task + '\n', (err) => {
+        if (err) console.error('Error adding task:', err);
+        else console.log(` ${task}`);
+    });
+}
+addTask('learning system files and path');
+addTask('basic http server & .env');
+
+
+function viewTasks() {
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading tasks:', err);
+        } else if (!data.trim()) {
+            console.log('No tasks available.');
+        } else {
+            console.log('Your Tasks:\n' + data);
+        }
+    });
+}
+viewTasks();
+
+
+function updateTask(oldTask, newTask) {
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) return console.error('Error reading file:', err);
+
+        let tasks = data.split('\n').map(task => (task.trim() === oldTask ? newTask : task));
+        fs.writeFile(filePath, tasks.join('\n'), (err) => {
+            if (err) console.error('Error updating task:', err);
+            else console.log(`Task updated: ${oldTask} → ${newTask}`);
+        });
+    });
+}
+
+updateTask('learning system files', '.env');
+
+
+function deleteTask(taskToRemove) {
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) return console.error('Error reading file:', err);
+
+        let tasks = data.split('\n').filter(task => task.trim() !== taskToRemove);
+        fs.writeFile(filePath, tasks.join('\n'), (err) => {
+            if (err) console.error('Error deleting task:', err);
+            else console.log(`Task deleted: ${taskToRemove}`);
+        });
+    });
+}
+deleteTask('Completed task');
